@@ -14,3 +14,8 @@ test:
 gender_submission:
     type: CSVLocalDataSet
     filepath: data/01_raw/gender_submission.csv
+
+train_prep:
+    type: CSVLocalDataSet
+    filepath: data/02_intermediate/train_prep.csv
+  
