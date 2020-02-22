@@ -10,6 +10,11 @@ kedro new
 
 Take a look at the [documentation](https://kedro.readthedocs.io) to get started.
 
+## ToDo
+
+- Save preprocessing objects such as label encoder.
+  - Avoid leakage
+
 ## Data Download
 
 Download the Titanic data from Kaggle using Kaggle API.
