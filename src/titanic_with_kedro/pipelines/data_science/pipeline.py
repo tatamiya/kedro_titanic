@@ -18,5 +18,6 @@ def create_pipeline(**kwargs):
                 inputs=["clf", "X_test", "y_test"],
                 outputs=None,
             ),
-        ]
+        ],
+        tags=["ds_tag"],
     )

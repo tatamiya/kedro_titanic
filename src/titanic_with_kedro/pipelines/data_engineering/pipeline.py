@@ -11,5 +11,6 @@ def create_pipeline(**kwargs):
                 outputs="train_prep",
                 name="preprocess",
             ),
-        ]
+        ],
+        tags=['de_tag'],
     )
