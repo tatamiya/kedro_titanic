@@ -14,6 +14,8 @@ Take a look at the [documentation](https://kedro.readthedocs.io) to get started.
 
 - Save preprocessing objects such as label encoder.
   - Avoid leakage
+- Speculation with new data
+  - Read out the saved model and predict from new data sets
 
 ## Data Download
 
