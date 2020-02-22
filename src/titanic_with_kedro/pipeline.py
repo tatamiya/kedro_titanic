@@ -30,8 +30,9 @@
 from typing import Dict
 
 from kedro.pipeline import Pipeline
-from titanic_with_kedro.pipelines import data_engineering as de
-from titanic_with_kedro.pipelines import data_science as ds
+from titanic_with_kedro.pipelines.data_engineering import pipeline as de
+from titanic_with_kedro.pipelines.data_science import pipeline as ds
+from titanic_with_kedro.nodes.utils import log_running_time
 
 
 # Here you can define your data-driven pipeline by importing your functions
@@ -61,7 +62,11 @@ def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
 
     """
 
-    return {
-        "__default__": Pipeline([])
-    }
+    de_pipeline = de.create_pipeline().decorate(log_running_time)
+    ds_pipeline = ds.create_pipeline().decorate(log_running_time)
 
+    return {
+        "de": de_pipeline,
+        "ds": ds_pipeline,
+        "__default__": de_pipeline + ds_pipeline,
+    }
