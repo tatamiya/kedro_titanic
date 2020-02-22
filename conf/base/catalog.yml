@@ -3,3 +3,14 @@
 # Documentation for this file format can be found in the kedro docs under `Accessing data`
 # You can access the kedro docs by running `kedro docs`
 
+train:
+    type: CSVLocalDataSet
+    filepath: data/01_raw/train.csv
+
+test:
+    type: CSVLocalDataSet
+    filepath: data/01_raw/test.csv
+
+gender_submission:
+    type: CSVLocalDataSet
+    filepath: data/01_raw/gender_submission.csv

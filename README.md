@@ -10,6 +10,15 @@ kedro new
 
 Take a look at the [documentation](https://kedro.readthedocs.io) to get started.
 
+## Data Download
+
+Download the Titanic data from Kaggle using Kaggle API.
+
+```
+kaggle competitions download -c titanic
+unzip titanic.zip
+```
+
 ## Rules and guidelines
 
 In order to get the best out of the template:
