@@ -18,4 +18,8 @@ gender_submission:
 train_prep:
     type: CSVLocalDataSet
     filepath: data/02_intermediate/train_prep.csv
-  
+
+clf:
+    type: PickleLocalDataSet
+    filepath: data/06_models/classifier.pickle
+    versioned: true
