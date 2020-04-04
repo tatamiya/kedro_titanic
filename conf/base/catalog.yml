@@ -11,15 +11,21 @@ test:
     type: CSVLocalDataSet
     filepath: data/01_raw/test.csv
 
-gender_submission:
+train_prepped:
     type: CSVLocalDataSet
-    filepath: data/01_raw/gender_submission.csv
+    filepath: data/02_intermediate/train_prepped.csv
 
-train_prep:
-    type: CSVLocalDataSet
-    filepath: data/02_intermediate/train_prep.csv
+preprocessor_numerical:
+    type: PickleLocalDataSet
+    filepath: data/02_intermediate/preprocessor_numerical.pickle
+    versioned: true
 
-clf:
+preprocessor_categorical:
+    type: PickleLocalDataSet
+    filepath: data/02_intermediate/preprocessor_categorical.pickle
+    versioned: true
+
+classifier:
     type: PickleLocalDataSet
     filepath: data/06_models/classifier.pickle
     versioned: true
