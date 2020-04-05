@@ -1,3 +1,4 @@
+import pandas as pd
 import logging
 
 from sklearn.ensemble import RandomForestClassifier
@@ -21,3 +22,12 @@ def model_construction(X, y, params):
                 (gs.best_score_, params['metrics']))
 
     return gs
+
+
+def prediction(df: pd.DataFrame, clf, df_org: pd.DataFrame):
+    pred = clf.predict(df)
+
+    df_pred = df_org.copy()
+    df_pred['pred'] = pred
+
+    return df_pred

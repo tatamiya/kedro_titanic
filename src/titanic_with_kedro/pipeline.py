@@ -31,7 +31,7 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 from titanic_with_kedro.pipelines.modeling import pipeline as modeling
-#  from titanic_with_kedro.pipelines.data_science import pipeline as ds
+from titanic_with_kedro.pipelines.prediction import pipeline as prediction 
 from titanic_with_kedro.nodes.utils import log_running_time
 
 
@@ -63,10 +63,10 @@ def create_pipelines(**kwargs) -> Dict[str, Pipeline]:
     """
 
     modeling_pipeline = modeling.create_pipeline().decorate(log_running_time)
-    #  ds_pipeline = ds.create_pipeline().decorate(log_running_time)
+    prediction_pipeline = prediction.create_pipeline().decorate(log_running_time)
 
     return {
         "modeling": modeling_pipeline,
-        #  "ds": ds_pipeline,
-        "__default__": modeling_pipeline  # + ds_pipeline,
+        "prediction": prediction_pipeline,
+        "__default__": modeling_pipeline + prediction_pipeline,
     }

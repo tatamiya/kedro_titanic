@@ -15,6 +15,10 @@ train_prepped:
     type: CSVLocalDataSet
     filepath: data/02_intermediate/train_prepped.csv
 
+test_prepped:
+    type: CSVLocalDataSet
+    filepath: data/05_model_input/test_prepped.csv
+
 preprocessor_numerical:
     type: PickleLocalDataSet
     filepath: data/02_intermediate/preprocessor_numerical.pickle
@@ -29,3 +33,8 @@ classifier:
     type: PickleLocalDataSet
     filepath: data/06_models/classifier.pickle
     versioned: true
+
+prediction_result:
+    type: CSVLocalDataSet
+    filepath: data/07_model_output/predict.csv
+
